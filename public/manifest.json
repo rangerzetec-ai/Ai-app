@@ -1,0 +1,48 @@
+{
+  "name": "PierPro - Foundation Repair Management",
+  "short_name": "PierPro",
+  "description": "Professional foundation repair client management with 3D modeling",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#2563eb",
+  "orientation": "portrait-primary",
+  "scope": "/",
+  "icons": [
+    {
+      "src": "https://mocha-cdn.com/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png",
+      "purpose": "maskable any"
+    },
+    {
+      "src": "https://mocha-cdn.com/favicon.ico",
+      "sizes": "16x16 32x32 48x48",
+      "type": "image/x-icon"
+    }
+  ],
+  "categories": ["business", "productivity", "utilities"],
+  "shortcuts": [
+    {
+      "name": "Dashboard",
+      "short_name": "Dashboard",
+      "description": "View main dashboard",
+      "url": "/",
+      "icons": [{ "src": "https://mocha-cdn.com/apple-touch-icon.png", "sizes": "180x180" }]
+    },
+    {
+      "name": "Appointments",
+      "short_name": "Appointments",
+      "description": "View appointments",
+      "url": "/appointments",
+      "icons": [{ "src": "https://mocha-cdn.com/apple-touch-icon.png", "sizes": "180x180" }]
+    },
+    {
+      "name": "Leads",
+      "short_name": "Leads",
+      "description": "Manage leads",
+      "url": "/leads",
+      "icons": [{ "src": "https://mocha-cdn.com/apple-touch-icon.png", "sizes": "180x180" }]
+    }
+  ]
+}

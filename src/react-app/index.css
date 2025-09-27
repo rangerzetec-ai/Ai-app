@@ -1,0 +1,175 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Network error handler animations */
+@keyframes slide-down {
+  from {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.animate-slide-down {
+  animation: slide-down 0.3s ease-out;
+}
+
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+}
+
+/* Mobile optimizations */
+@supports (padding: max(0px)) {
+  .safe-area-top {
+    padding-top: max(1rem, env(safe-area-inset-top));
+  }
+  .safe-area-bottom {
+    padding-bottom: max(1rem, env(safe-area-inset-bottom));
+  }
+  .safe-area-left {
+    padding-left: max(1rem, env(safe-area-inset-left));
+  }
+  .safe-area-right {
+    padding-right: max(1rem, env(safe-area-inset-right));
+  }
+}
+
+/* Prevent zoom on inputs on mobile */
+@media screen and (max-width: 768px) {
+  input[type="text"],
+  input[type="email"],
+  input[type="tel"],
+  input[type="number"],
+  input[type="password"],
+  input[type="search"],
+  input[type="url"],
+  textarea,
+  select {
+    font-size: 16px !important;
+    transform: translateZ(0);
+  }
+}
+
+/* Touch improvements */
+.touch-target {
+  min-height: 44px;
+  min-width: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Smooth scrolling for mobile */
+* {
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Remove tap highlight */
+* {
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Mobile scroll improvements */
+body {
+  overscroll-behavior: none;
+  -webkit-text-size-adjust: 100%;
+}
+
+/* Ensure last items aren't hidden behind bottom nav on mobile */
+@media (max-width: 768px) {
+  .mobile-content-container {
+    padding-bottom: 120px; /* Extra space for bottom nav */
+  }
+  
+  /* Safe area handling for devices with home indicator */
+  .mobile-bottom-spacing {
+    padding-bottom: max(80px, env(safe-area-inset-bottom) + 80px);
+  }
+}
+
+/* Performance optimizations for mobile */
+.gpu-accelerated {
+  transform: translateZ(0);
+  will-change: transform;
+}
+
+/* 3D component mobile optimizations */
+canvas {
+  touch-action: none;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+@media (max-width: 768px) {
+  canvas {
+    max-width: 100%;
+    height: auto;
+  }
+}
+
+/* Custom mobile form styles */
+.mobile-input {
+  appearance: none;
+  -webkit-appearance: none;
+  border-radius: 8px;
+  font-size: 16px;
+  padding: 12px 16px;
+  border: 1px solid #e2e8f0;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.mobile-input:focus {
+  outline: none;
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+/* Mobile button optimizations */
+.mobile-button {
+  min-height: 48px;
+  touch-action: manipulation;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+/* Loading states for mobile */
+.mobile-loading {
+  pointer-events: none;
+  opacity: 0.6;
+}
+
+/* Mobile modal optimizations */
+@media (max-width: 768px) {
+  .mobile-modal {
+    margin: 0;
+    border-radius: 0;
+    min-height: 100vh;
+    width: 100vw;
+  }
+}
+
+/* Prevent body scroll when modal is open on mobile */
+.modal-open {
+  overflow: hidden;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+}
+
+/* Mobile-friendly hover states */
+@media (hover: hover) and (pointer: fine) {
+  .hover-desktop:hover {
+    background-color: rgba(0, 0, 0, 0.05);
+  }
+}
+
+@media (hover: none) and (pointer: coarse) {
+  .hover-touch:active {
+    background-color: rgba(0, 0, 0, 0.1);
+    transform: scale(0.98);
+  }
+}

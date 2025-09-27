@@ -11,7 +11,18 @@ export default defineConfig({
     allowedHosts: true,
   },
   build: {
-    chunkSizeWarningLimit: 5000,
+    chunkSizeWarningLimit: 1000,
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          vendor: ['react', 'react-dom', 'react-router-dom'],
+          ui: ['lucide-react'],
+          three: ['three', '@react-three/fiber', '@react-three/drei'],
+          utils: ['zod', 'hono']
+        }
+      }
+    },
+    minify: 'terser',
   },
   resolve: {
     alias: {
